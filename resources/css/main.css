@@ -1,0 +1,53 @@
+/*
+ * Trainings planning system styles.
+ * Training page.
+ * @author Victor Litvinkov
+ */
+@font-face {font-family:Mezzo Bold;src: url(../fonts/mezzo_bd.otf);src: local(Mezzo), url(../fonts/mezzo_bd.otf);}
+@font-face {font-family:Mezzo Regular;src: url(../fonts/mezzo_rg.otf);src: local(Mezzo), url(../fonts/mezzo_rg.otf);}
+button:active, button:focus, a:active, a:focus {outline: none;}
+
+h1, h2, h3, h4, h5, h6 {font-family:Mezzo Regular;font-weight:100;}
+h1{font-size:30px;line-height:34px;}
+h2{font-size:22px;line-height:30px;}
+h3{font-size:18px;line-height:24px;}
+
+body {font-family:Lucida Sans Unicode,Lucida Grande,sans-serif;color:#161616;background-color:#F5EEAD; background-image: url(../img/bg.jpg); background-position: left top; background-repeat: repeat;}
+p{font-size:14px;}
+div.card, div.pulse{font-family:Lucida Sans Unicode,Lucida Grande,sans-serif;color:#161616;line-height: 1.5;}
+p.card-text, div.pulse{font-size:13px;}
+p.card-text{-moz-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
+div.pulse{margin-bottom:5px;}
+#StatusIcon{color:#6c757d;}
+
+main section{border:dashed 3px rgb(0,0,0,0.20);border-radius:6px;margin-bottom:5px;padding:10px;font-family:Mezzo Regular;font-size:22px;line-height:24px;color:rgb(0,0,0,0.45);}
+div.dropzone{display:block;clear:both;border-radius:6px;height:25px;background:rgb(0,0,0,0.10);margin-top:7px;}
+div.dropzone_active{background:rgb(0,0,0,0.20);}
+section>div.dropzone:first-child{margin-top:0px;}
+div.card{margin-top:7px;}
+div.card_remove{display:none;margin-right:10px;margin-left:10px;}
+div.card_removable{display: flex !important;align-items: stretch !important;flex-direction: row;}
+div.card_removable div.card-body{flex-grow:1 !important;}
+div.card_removable div.card_remove{display:flex;text-align:center;}
+
+div.placeholder{position:absolute;display:block;background:rgb(0,0,0,0.10);border-radius:6px;z-index:5;}
+
+p.exr_categ{margin:10px auto 10px -5px;}
+p.exr_categ a {padding-left:5px;padding-right:5px;margin-right:1px;display: inline-block;}
+p.exr_categ a, div.pulse a{text-decoration:underline;color:#005CBF;}
+p.exr_categ a:hover, div.pulse a:hover{text-decoration:none;color:#005CBF;}
+p.exr_categ a.exr_categ_current{color:#fff!important;background-color:#6c757d!important;}
+
+div.exr_list {margin:-10px -8px 0px;}
+div.exr_list .col-4{padding:10px 7px;}
+div.exr_list .card{margin-bottom:18px;}
+
+.card_dragged{z-index:10;}
+footer {margin:20px 0px 15px;position: relative;}
+footer svg{display:block;margin:auto;}
+.sfx_logo{position:absolute;bottom:18px;left:50%;margin-left:-99px;}
+.sfx_logo h3{display:inline-block;}
+.sfx_logo h3:nth-child(2){margin-left:89px;}
+
+header {margin-top:15px; margin-bottom:10px;}
+.is_mobile{display:none!important;}

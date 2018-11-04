@@ -1,0 +1,79 @@
+[
+    {
+        "name": "bcosca/fatfree-core",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bcosca/fatfree-core.git",
+            "reference": "813377b47fa1972f21e9c1b2264d9902dc292de6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bcosca/fatfree-core/zipball/813377b47fa1972f21e9c1b2264d9902dc292de6",
+            "reference": "813377b47fa1972f21e9c1b2264d9902dc292de6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "time": "2018-10-14T02:10:16+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "."
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0"
+        ],
+        "description": "A powerful yet easy-to-use PHP micro-framework designed to help you build dynamic and robust Web applications - fast!",
+        "homepage": "http://fatfreeframework.com/"
+    },
+    {
+        "name": "fpdf/fpdf",
+        "version": "1.81.2",
+        "version_normalized": "1.81.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/coreydoughty/Fpdf.git",
+            "reference": "6be5dd7dd0b3077b565ecadb28e7f01f7d2f2185"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/coreydoughty/Fpdf/zipball/6be5dd7dd0b3077b565ecadb28e7f01f7d2f2185",
+            "reference": "6be5dd7dd0b3077b565ecadb28e7f01f7d2f2185",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0"
+        },
+        "time": "2018-10-25T10:38:10+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Fpdf\\": "src/Fpdf"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Corey Doughty",
+                "email": "corey@doughty.ca"
+            }
+        ],
+        "description": "FPDF Composer Wrapper",
+        "homepage": "https://github.com/coreydoughty/Fpdf",
+        "keywords": [
+            "fpdf",
+            "pdf",
+            "wrapper"
+        ]
+    }
+]

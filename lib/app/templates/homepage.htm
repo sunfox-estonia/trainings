@@ -1,0 +1,43 @@
+    <include href="blocks/head.htm" with="id={{ @pln_conf_id }},ql={{ @pln_conf_quicklink }}"/>
+    <div class="container-fluid">
+       
+        <header><div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col-8"><h1>План занятия</h1></div>
+                <div class="col-4"><div class="btn-group float-right"><button type="button" class="btn btn-light" data-toggle="modal" data-target="#ModalGetQuicklink"><i class="fas fa-link"></i></button><a href="https://trainings.sunfox.ee/pdf/e45k43" class="btn btn-light"><i class="fas fa-print"></i></a></div></div>
+            </div>
+        </div>
+        <div class="col-6">
+        <form class="form-inline float-right"><div class="form-group float-right"><label for="TrainingDate">Дата проведения:</label><input type="date" id="ConfigTrainDate" class="form-control mx-sm-2" style="margin-right:0 !important;" onchange="Config2Base()" <check if="{{ @pln_conf_planned }}">value="{{ date(@pln_conf_planned) }}"</check>></div></form>
+        </div>
+        </div></header>
+        <div class="row">
+            <div class="col">
+                
+                <main>
+                    <section style="min-height:100px;" class="section_dropzone" data-section="1">Разминка <small>10 минут</small></section>
+                    <div class="pulse text-center"><img src="https://sunfox.ee/resources/eventmarks/16/lifecycle.png"> &mdash; Не забывайте проверять пульс у спортсменов!</div>
+                    <section style="min-height:50px;" class="section_dropzone" data-section="2">Общая физическая подготовка <small>5 минут</small></section>
+                    <section style="min-height:100px;" class="section_dropzone" data-section="3">Ударно-беговая тренировка <small>10 минут</small></section>
+                    <section style="min-height:100px;" class="section_dropzone" data-section="4">Специальная физическая подготовка <small>15 минут</small></section>
+                    <section style="min-height:50px;" class="section_dropzone" data-section="5">Новая информация <small>5 минут</small></section>
+                    <section style="min-height:100px;" class="section_dropzone" data-section="6">Наработка техники <small>15 минут</small></section>
+                    <section style="min-height:100px;" class="section_dropzone" data-section="7">Бои <small>20 минут</small></section>
+                    <section style="min-height:100px;" class="section_dropzone" data-section="8">Заминка <small>10 минут</small></section>
+                </main>                
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col"><h3>Упражнения в категориях:</h3></div>
+                    <div class="col-6 text-right"><button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#ModalAddCat"><i class="fas fa-plus"></i> Категория</button>&nbsp;<button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#ModalAddExr"><i class="fas fa-plus"></i> Упражнение</button></div>
+                </div>    
+                <div id="CategoriesList">
+                
+                </div>
+                <div class="row justify-content-start exr_list" id="ExersicesList">
+                
+                </div>
+            </div>
+    </div></div>
+    <include href="blocks/foot.htm" with="quicklink={{ @pln_conf_quicklink }}"/>

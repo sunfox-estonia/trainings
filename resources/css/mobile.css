@@ -1,0 +1,8 @@
+/*
+ * Trainings planning system styles.
+ * Training page. Mobile version.
+ * @author Victor Litvinkov
+ */
+.dropzone, .card_remove{display:none!important;}
+main section{border:dashed 3px #c9c48e;}
+.is_mobile{display:inherit!important;}
