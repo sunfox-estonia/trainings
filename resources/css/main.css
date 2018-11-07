@@ -43,11 +43,10 @@ div.exr_list .col-4{padding:10px 7px;}
 div.exr_list .card{margin-bottom:18px;}
 
 .card_dragged{z-index:10;}
-footer {margin:20px 0px 15px;position: relative;}
-footer svg{display:block;margin:auto;}
-.sfx_logo{position:absolute;bottom:18px;left:50%;margin-left:-99px;}
-.sfx_logo h3{display:inline-block;}
-.sfx_logo h3:nth-child(2){margin-left:89px;}
+footer {margin:10px 0px 10px;position:relative;}
+footer h3{margin:3px 35px 0px 6px;}
+footer p:first-child{margin-top:13px;}
+footer p{margin-top:10px;margin-bottom:0px;font-size:13px;}
 
 header {margin-top:15px; margin-bottom:10px;}
 .is_mobile{display:none!important;}
