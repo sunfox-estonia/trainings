@@ -1,6 +1,7 @@
 <?php 
 // composer autoloader for required packages and dependencies
 require_once('lib/autoload.php');
+require_once('config.php');
 /** @var \Base $f3 */
 $f3 = \Base::instance();
 //$f3->set('CACHE','folder=tmp/');
@@ -9,7 +10,7 @@ $f3->set('DEBUG',3);
 $f3->set('AUTOLOAD', 'app/controllers/');
 $f3->set('UI','app/templates/');
 // Connect MySQL here
-$f3->set('DB',new DB\SQL('mysql:host=localhost;port=3306;dbname=[db_name]','[db_user]','[db_password]'));
+$f3->set('DB',new DB\SQL('mysql:host='.$dbhost.';port='.$dbpost.';dbname='.$dbname,$dbuser,$dbpassword));
 
 $f3->set('ONERROR',function($f3){
     //echo $f3->get('ERROR.code') . '<br>';
