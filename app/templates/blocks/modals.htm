@@ -1,14 +1,18 @@
-<div class="modal" tabindex="-1" role="dialog" id="ModalGetQuicklink" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+    <div class="modal" tabindex="-1" role="dialog" id="ModalGetQuicklink" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content">
     <div class="modal-header"><h5 class="modal-title">Поделиться ссылкой</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>   
     <div class="modal-body">
     <div class="form-group">
     <label for="recipient-name" class="col-form-label" for="plan_quicklink">Ссылка на этот план занятия:</label>
     <div class="input-group mb-3">
-        <input type="text" class="form-control" name="plan_quicklink" value="https://trainings.sunfox.ee/plan/{{ @modal_quicklink }}">
+        <input type="text" class="form-control" name="plan_quicklink" value="{{ @modal_url_txt }}">
         <div class="input-group-append">
         <button class="btn btn-outline-secondary" type="button" id="ButtonCopyQuicklink" onclick="Copy2Clipboard('plan_quicklink')">Скопировать</button>
         </div>
     </div>
+    <div class="row">
+    <div class="col-12 col-sm-3 tip"><p class="text-left"><img src="{{ @modal_url_img }}"></p></div>
+    <div class="col tip"><p>Сканируйте QR-код при помощи своего мобильного телефона:</p><ul class="list-unstyled"><li>&ndash; <a href="https://support.mozilla.org/ru/kb/skanirovanie-qr-koda-v-firefox-dlya-android">Mozilla Firefox на устройстве Android</a>;</li><li>&ndash; сервис <a href="https://support.google.com/photos/answer/7539151?hl=ru&co=GENIE.Platform">Google Lens на устройстве Android</a>.</li></ul></div>
+    </div>    
     </div>
     </div>
     </div></div></div>
