@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "873d86904f504fa52f79435e58ebbd27",
+    "content-hash": "dbec31256b87da444a9ffe6350530bfd",
     "packages": [
         {
             "name": "bcosca/fatfree-core",
@@ -36,56 +36,6 @@
             "description": "A powerful yet easy-to-use PHP micro-framework designed to help you build dynamic and robust Web applications - fast!",
             "homepage": "http://fatfreeframework.com/",
             "time": "2019-01-13T16:03:06+00:00"
-        },
-        {
-            "name": "chillerlan/php-qrcode",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/chillerlan/php-qrcode.git",
-                "reference": "16e889d0ca28748c87eabccfeaf082f082e5aef5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/chillerlan/php-qrcode/zipball/16e889d0ca28748c87eabccfeaf082f082e5aef5",
-                "reference": "16e889d0ca28748c87eabccfeaf082f082e5aef5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "5.3.*"
-            },
-            "suggest": {
-                "chillerlan/php-googleauth": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "chillerlan\\QRCode\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Smiley",
-                    "email": "smiley@chillerlan.net"
-                },
-                {
-                    "name": "Kazuhiko Arase",
-                    "homepage": "https://github.com/kazuhikoarase"
-                }
-            ],
-            "description": "A QR code generator. PHP 5.6+, PHP 7",
-            "homepage": "https://github.com/codemasher/php-qrcode",
-            "keywords": [
-                "qr code"
-            ],
-            "time": "2017-02-10T21:24:38+00:00"
         }
     ],
     "packages-dev": [],

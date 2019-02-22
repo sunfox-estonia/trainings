@@ -5,8 +5,7 @@
                 "vendor-dir": "lib"
         },
         "require": {
-                "bcosca/fatfree-core": "dev-master",
-		"chillerlan/php-qrcode": "1.1.0"
+                "bcosca/fatfree-core": "dev-master"
         }
 }
 

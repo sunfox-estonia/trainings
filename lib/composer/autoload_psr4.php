@@ -6,5 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'chillerlan\\QRCode\\' => array($vendorDir . '/chillerlan/php-qrcode/src'),
 );

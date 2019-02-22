@@ -6,20 +6,6 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit0d9e3bd0b3945bec3c390cc44dab0965
 {
-    public static $prefixLengthsPsr4 = array (
-        'c' => 
-        array (
-            'chillerlan\\QRCode\\' => 18,
-        ),
-    );
-
-    public static $prefixDirsPsr4 = array (
-        'chillerlan\\QRCode\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/chillerlan/php-qrcode/src',
-        ),
-    );
-
     public static $classMap = array (
         'Audit' => __DIR__ . '/..' . '/bcosca/fatfree-core/audit.php',
         'Auth' => __DIR__ . '/..' . '/bcosca/fatfree-core/auth.php',
@@ -67,8 +53,6 @@ class ComposerStaticInit0d9e3bd0b3945bec3c390cc44dab0965
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit0d9e3bd0b3945bec3c390cc44dab0965::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit0d9e3bd0b3945bec3c390cc44dab0965::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit0d9e3bd0b3945bec3c390cc44dab0965::$classMap;
 
         }, null, ClassLoader::class);
