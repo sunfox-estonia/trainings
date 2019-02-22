@@ -18,7 +18,7 @@
 ```bash
 git clone https://github.com/Viruviking/trainings.git /var/www/[директория сайта]
 cd /var/www/[директория сайта]
-wget https://getcomposer.org/composer.phar
+wget -q https://getcomposer.org/composer.phar -O composer.phar 
 php composer.phar install
 mkdir tmp
 chown -R www-data:www-data tmp/
