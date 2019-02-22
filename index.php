@@ -196,6 +196,4 @@ $f3->route('GET /modals/@pid/@cid', function ($f3,$params){
     echo Template::instance()->render('blocks/modals.htm');
 });
 
-
-
 $f3->run();
