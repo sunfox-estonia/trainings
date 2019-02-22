@@ -19,6 +19,7 @@ p.card-text, div.tip p, div.tip ul{font-size:13px;}
 p.card-text{-moz-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
 div.tip {margin-top:8px;}
 div.tip p {margin-bottom:8px;}
+div.tip ul {margin-bottom:0px;}
 #StatusIcon{color:#6c757d;}
 
 main section{border:dashed 3px rgb(0,0,0,0.20);border-radius:6px;margin-bottom:5px;padding:10px;font-family:Mezzo Regular;font-size:22px;line-height:24px;color:rgb(0,0,0,0.45);}
