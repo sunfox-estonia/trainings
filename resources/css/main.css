@@ -15,7 +15,7 @@ h3{font-size:18px;line-height:24px;}
 body {font-family:Lucida Sans Unicode,Lucida Grande,sans-serif;color:#161616;background-color:#F5EEAD; background-image: url(../img/bg.jpg); background-position: left top; background-repeat: repeat;}
 p{font-size:14px;}
 div.card, div.tip{font-family:Lucida Sans Unicode,Lucida Grande,sans-serif;color:#161616;line-height: 1.5;}
-p.card-text, div.tip{font-size:13px;}
+p.card-text, div.tip p, div.tip ul{font-size:13px;}
 p.card-text{-moz-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
 div.tip {margin-top:8px;}
 div.tip p {margin-bottom:8px;}
