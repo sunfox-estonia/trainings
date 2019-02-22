@@ -184,16 +184,18 @@ $f3->route('GET /modals/@pid/@cid', function ($f3,$params){
     // Get Quicklink
     $pln = new DB\SQL\Mapper($f3->get('DB'),'plans');
     $pln->load(array('id=?',$params['pid']));
-    $f3->set('modal_quicklink',$pln->quicklink);
+    
+    $pln_url = ($_SERVER['HTTPS'] ? "https://" : "http://").$_SERVER['HTTP_HOST'] . '/plan/' . $pln->quicklink;
+    $pln_url_img_prep = shell_exec('qrencode --output=- -m=1 '.escapeshellarg($pln_url));
+    $pln_url_img = "data:image/png;base64,".base64_encode($pln_url_img_prep);
+    
+    //$f3->set('modal_quicklink',$pln->quicklink);
+    $f3->set('modal_url_txt',$pln_url);
+    $f3->set('modal_url_img',$pln_url_img);   
+    
     echo Template::instance()->render('blocks/modals.htm');
 });
 
-/**
- * PDF file generator
- * Prepared for v 1.5
 
-$f3->route('GET /pdf/@pid', function ($f3,$params){
-   //    $event_id = $params['id'];
-});
-*/
+
 $f3->run();

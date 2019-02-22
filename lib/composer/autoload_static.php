@@ -7,16 +7,16 @@ namespace Composer\Autoload;
 class ComposerStaticInit0d9e3bd0b3945bec3c390cc44dab0965
 {
     public static $prefixLengthsPsr4 = array (
-        'F' => 
+        'c' => 
         array (
-            'Fpdf\\' => 5,
+            'chillerlan\\QRCode\\' => 18,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Fpdf\\' => 
+        'chillerlan\\QRCode\\' => 
         array (
-            0 => __DIR__ . '/..' . '/fpdf/fpdf/src/Fpdf',
+            0 => __DIR__ . '/..' . '/chillerlan/php-qrcode/src',
         ),
     );
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20ba0f1d783f11e40f5f0298b1fcc5d5",
+    "content-hash": "873d86904f504fa52f79435e58ebbd27",
     "packages": [
         {
             "name": "bcosca/fatfree-core",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bcosca/fatfree-core.git",
-                "reference": "813377b47fa1972f21e9c1b2264d9902dc292de6"
+                "reference": "dde9acde74233e39f438d85aad908e658f9558e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bcosca/fatfree-core/zipball/813377b47fa1972f21e9c1b2264d9902dc292de6",
-                "reference": "813377b47fa1972f21e9c1b2264d9902dc292de6",
+                "url": "https://api.github.com/repos/bcosca/fatfree-core/zipball/dde9acde74233e39f438d85aad908e658f9558e8",
+                "reference": "dde9acde74233e39f438d85aad908e658f9558e8",
                 "shasum": ""
             },
             "require": {
@@ -35,29 +35,35 @@
             ],
             "description": "A powerful yet easy-to-use PHP micro-framework designed to help you build dynamic and robust Web applications - fast!",
             "homepage": "http://fatfreeframework.com/",
-            "time": "2018-10-14T02:10:16+00:00"
+            "time": "2019-01-13T16:03:06+00:00"
         },
         {
-            "name": "fpdf/fpdf",
-            "version": "1.81.2",
+            "name": "chillerlan/php-qrcode",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/coreydoughty/Fpdf.git",
-                "reference": "6be5dd7dd0b3077b565ecadb28e7f01f7d2f2185"
+                "url": "https://github.com/chillerlan/php-qrcode.git",
+                "reference": "16e889d0ca28748c87eabccfeaf082f082e5aef5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coreydoughty/Fpdf/zipball/6be5dd7dd0b3077b565ecadb28e7f01f7d2f2185",
-                "reference": "6be5dd7dd0b3077b565ecadb28e7f01f7d2f2185",
+                "url": "https://api.github.com/repos/chillerlan/php-qrcode/zipball/16e889d0ca28748c87eabccfeaf082f082e5aef5",
+                "reference": "16e889d0ca28748c87eabccfeaf082f082e5aef5",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6.0"
             },
+            "require-dev": {
+                "phpunit/phpunit": "5.3.*"
+            },
+            "suggest": {
+                "chillerlan/php-googleauth": "*"
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Fpdf\\": "src/Fpdf"
+                    "chillerlan\\QRCode\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -66,18 +72,20 @@
             ],
             "authors": [
                 {
-                    "name": "Corey Doughty",
-                    "email": "corey@doughty.ca"
+                    "name": "Smiley",
+                    "email": "smiley@chillerlan.net"
+                },
+                {
+                    "name": "Kazuhiko Arase",
+                    "homepage": "https://github.com/kazuhikoarase"
                 }
             ],
-            "description": "FPDF Composer Wrapper",
-            "homepage": "https://github.com/coreydoughty/Fpdf",
+            "description": "A QR code generator. PHP 5.6+, PHP 7",
+            "homepage": "https://github.com/codemasher/php-qrcode",
             "keywords": [
-                "fpdf",
-                "pdf",
-                "wrapper"
+                "qr code"
             ],
-            "time": "2018-10-25T10:38:10+00:00"
+            "time": "2017-02-10T21:24:38+00:00"
         }
     ],
     "packages-dev": [],

@@ -14,10 +14,11 @@ h3{font-size:18px;line-height:24px;}
 
 body {font-family:Lucida Sans Unicode,Lucida Grande,sans-serif;color:#161616;background-color:#F5EEAD; background-image: url(../img/bg.jpg); background-position: left top; background-repeat: repeat;}
 p{font-size:14px;}
-div.card, div.pulse{font-family:Lucida Sans Unicode,Lucida Grande,sans-serif;color:#161616;line-height: 1.5;}
-p.card-text, div.pulse{font-size:13px;}
+div.card, div.tip{font-family:Lucida Sans Unicode,Lucida Grande,sans-serif;color:#161616;line-height: 1.5;}
+p.card-text, div.tip{font-size:13px;}
 p.card-text{-moz-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
-div.pulse{margin-bottom:5px;}
+div.tip {margin-top:8px;}
+div.tip p {margin-bottom:8px;}
 #StatusIcon{color:#6c757d;}
 
 main section{border:dashed 3px rgb(0,0,0,0.20);border-radius:6px;margin-bottom:5px;padding:10px;font-family:Mezzo Regular;font-size:22px;line-height:24px;color:rgb(0,0,0,0.45);}
@@ -34,8 +35,8 @@ div.placeholder{position:absolute;display:block;background:rgb(0,0,0,0.10);borde
 
 p.exr_categ{margin:10px auto 10px -5px;}
 p.exr_categ a {padding-left:5px;padding-right:5px;margin-right:1px;display: inline-block;}
-p.exr_categ a, div.pulse a{text-decoration:underline;color:#005CBF;}
-p.exr_categ a:hover, div.pulse a:hover{text-decoration:none;color:#005CBF;}
+p.exr_categ a, div.tip a{text-decoration:underline;color:#005CBF;}
+p.exr_categ a:hover, div.tip a:hover{text-decoration:none;color:#005CBF;}
 p.exr_categ a.exr_categ_current{color:#fff!important;background-color:#6c757d!important;}
 
 div.exr_list {margin:-10px -8px 0px;}
