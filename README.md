@@ -12,6 +12,17 @@
 
 Лучше всего запускать веб-приложение на базе конфигурации nginx + PHP-FPM.
 
+## Установка
+Подключитесь к своему серверу по протоколу SSH и выполните следующие команды:
+
+```bash
+git clone https://github.com/Viruviking/trainings.git /var/www/[директория сайта]
+cd /var/www/[директория сайта]
+wget https://getcomposer.org/composer.phar
+php composer.phar install
+chown -R www-data:www-data tmp/
+```
+
 ## База данных
 Подключение к БД MySQL настраивается в файле /config.php, пожалуйста укажите данные для подключения в соответсвии с рекомендациями.
 
