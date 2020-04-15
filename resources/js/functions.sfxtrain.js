@@ -46,3 +46,49 @@ function Plan2Base(){
     );
     function updpln_req_completed(){}
 };
+
+function TimerView(el){
+    var El2Run = document.getElementById('MainTimer');
+    if($(El2Run).css("display") == 'none'){
+        $(El2Run).slideDown();
+        $(el).addClass('active').blur();
+    } else {
+        $(El2Run).slideUp();
+        $(el).removeClass('active').blur();
+    }
+}
+
+function TimerPlus(el){
+    var c = $(el).closest('.timer').find('a').text();
+    timerInstance.stop();    
+    let d = new Date();
+    let TimerValue = c.split(':');
+    d.setHours(+TimerValue[0]);
+    d.setMinutes(TimerValue[1]);
+    d.setSeconds(TimerValue[2]);
+
+    d.setSeconds(d.getSeconds() + 30 );
+    $('#MainTimer a').text(`${d.getHours()}`.padStart(2,'0')+':'+`${d.getMinutes()}`.padStart(2,'0')+':'+`${d.getSeconds()}`.padStart(2,'0'));
+    $('#MainTimer a').addClass('stop');
+    $('#MainTimer button:first-of-type').removeAttr('disabled');
+}
+
+function TimerMinus(el){
+    var TimerValue = $(el).closest('.timer').find('a').text().split(':');
+    timerInstance.stop();      
+    $('#MainTimer a').addClass('stop');
+     
+    var TimerSeconds = (+TimerValue[0]) * 60 * 60 + (+TimerValue[1]) * 60 + (+TimerValue[2]);
+    
+    if(TimerSeconds <= 30){
+        $('#MainTimer a').text('00:00:30');
+    }else{
+        let d = new Date(); 
+        d.setHours(+TimerValue[0]);
+        d.setMinutes(TimerValue[1]);
+        d.setSeconds(TimerValue[2]);
+        d.setSeconds(d.getSeconds() - 30 );
+        $('#MainTimer a').text(`${d.getHours()}`.padStart(2,'0')+':'+`${d.getMinutes()}`.padStart(2,'0')+':'+`${d.getSeconds()}`.padStart(2,'0'));
+    }
+}
+

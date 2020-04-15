@@ -22,6 +22,16 @@ div.tip p {margin-bottom:8px;}
 div.tip ul {margin-bottom:0px;}
 #StatusIcon{color:#6c757d;}
 
+.timer{display:none;clear:both;position:sticky;top:0;background:#16161a;color:#fff;border-radius:0px 0px 6px 6px; font-size:40px;z-index:1000;}
+.timer a{text-decoration:none;color:#fff;}
+.timer a:hover{text-decoration:none;color:#fff;}
+.timer a:active, .timer a:focus{text-decoration:none;}
+.timer .col-12{padding-top:25px; padding-bottom:30px}
+.timer button:first-of-type{margin-right:20px;}
+.timer button:last-of-type{margin-left:20px;}
+.timer a.stop {color:#dc3545;}
+.fa-hourglass-half{padding-top:4px;}
+
 main section{border:dashed 3px rgb(0,0,0,0.20);border-radius:6px;margin-bottom:5px;padding:10px;font-family:Mezzo Regular;font-size:22px;line-height:24px;color:rgb(0,0,0,0.45);}
 div.dropzone{display:block;clear:both;border-radius:6px;height:25px;background:rgb(0,0,0,0.10);margin-top:7px;}
 div.dropzone_active{background:rgb(0,0,0,0.20);}

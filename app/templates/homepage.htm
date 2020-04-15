@@ -1,10 +1,20 @@
     <include href="blocks/head.htm" with="id={{ @pln_conf_id }},ql={{ @pln_conf_quicklink }}"/>
+
+    <div class="timer" id="MainTimer">
+        <div class="container-fluid"><div class="col-12 d-flex align-items-center justify-content-center">
+           <button type="button" class="btn btn-warning" onclick="TimerMinus(this)"><i class="fas fa-minus"></i></button><a href="#" class="stop">00:00:30</a><button type="button" class="btn btn-warning" onclick="TimerPlus(this)"><i class="fas fa-plus"></i></button>
+        </div></div>
+    </div>
+
     <div class="container-fluid">       
         <header><div class="row">
         <div class="col-7 col-sm-7 col-xl-2"><h1>Тренировка<small>&nbsp;<i class="fas fa-tablet-alt text-black-50 is_mobile"></i></small></h1></div>
         <div class="col-5 col-sm-5 col-xl-3">  
             <form class="form-inline float-right"><div class="form-group d-none d-md-block"><i class="fas fa-calendar-alt"></i><input type="date" id="ConfigTrainDate" class="form-control mx-sm-2" onchange="Config2Base()" <check if="{{ @pln_conf_planned }}">value="{{ date(@pln_conf_planned) }}"</check>></div>
-            <div class="btn-group"><button type="button" class="btn btn-light" data-toggle="modal" data-target="#ModalGetQuicklink"><i class="fas fa-link"></i></button><a href="#" class="btn btn-light disabled"><i class="fas fa-print"></i></a></div>
+            <div class="btn-group"><button type="button" class="btn btn-light" data-toggle="modal" data-target="#ModalGetQuicklink"><i class="fas fa-link"></i></button>
+                <a href="#" class="btn btn-light is_mobile" onclick="TimerView(this)"><i class="fas fa-hourglass-half"></i></a>    
+                <a href="#" class="btn btn-light disabled d-none d-xl-block"><i class="fas fa-print"></i></a>
+            </div>
             </form>
         </div>
         <div class="d-none d-xl-block">
