@@ -13,9 +13,9 @@ $f3->set('UI','app/templates/');
 $f3->set('DB',new DB\SQL('mysql:host='.$dbhost.';port='.$dbpost.';dbname='.$dbname,$dbuser,$dbpassword));
 
 $f3->set('ONERROR',function($f3){
-    //echo $f3->get('ERROR.code') . '<br>';
-    //echo $f3->get('ERROR.text') . '<br>';
-    //echo $f3->get('ERROR.trace') . '<br>';
+   // echo $f3->get('ERROR.code') . '<br>';
+   // echo $f3->get('ERROR.text') . '<br>';
+   // echo $f3->get('ERROR.trace') . '<br>';
     echo Template::instance()->render('error.htm');
 });
 
@@ -76,6 +76,8 @@ $f3->route('GET /plan/@pql', function($f3,$params) {
     $f3->set('pln_conf_id',$pln->id);
     $f3->set('pln_conf_quicklink',$pln->quicklink);
     $f3->set('pln_conf_planned',$pln->date_planned);
+    $f3->set('pln_conf_locked',$pln->locked);
+    $f3->set('pln_conf_title',$pln->locked_title);
     $f3->set('has_cats',$has_cats);
     echo Template::instance()->render('homepage.htm');
 });
@@ -97,6 +99,20 @@ $f3->route('POST /add/exercise', function($f3){
     $rec->category_id = $f3->get('POST.category_id');
     $rec->save();
     echo $rec->category_id;
+});
+/** 
+ * Lock the plan
+ * Locked plans cannot be changed later.
+ */
+$f3->route('POST /plan/locker', function($f3){
+    $plan_ql = $f3->get('POST.plan_ql'); 
+    $pln = new DB\SQL\Mapper($f3->get('DB'),'plans');
+    $pln->load(array('quicklink=?',$plan_ql));
+    $pln->locked = 1;
+    $pln->locked_title = rtrim(trim($f3->get('POST.plan_title')),".");
+    $pln->date_locked = date('Y-m-d', time());
+    $pln->save();
+    $f3->reroute('/plan/'.$plan_ql);
 });
 
 /**
@@ -184,12 +200,15 @@ $f3->route('GET /modals/@pid/@cid', function ($f3,$params){
     // Get Quicklink
     $pln = new DB\SQL\Mapper($f3->get('DB'),'plans');
     $pln->load(array('id=?',$params['pid']));
+
+    $list_prep = $f3->get('DB')->exec('SELECT DATE_FORMAT(`date_locked`, "%d.%m.%Y") as `date_locked`,`locked_title`,`quicklink` FROM `plans` WHERE  `locked` = 1;');
+    $f3->set('list_plans',$list_prep);    
     
     $pln_url = ($_SERVER['HTTPS'] ? "https://" : "http://").$_SERVER['HTTP_HOST'] . '/plan/' . $pln->quicklink;
     $pln_url_img_prep = shell_exec('qrencode --output=- -m=1 '.escapeshellarg($pln_url));
     $pln_url_img = "data:image/png;base64,".base64_encode($pln_url_img_prep);
     
-    //$f3->set('modal_quicklink',$pln->quicklink);
+    $f3->set('modal_quicklink',$pln->quicklink);
     $f3->set('modal_url_txt',$pln_url);
     $f3->set('modal_url_img',$pln_url_img);   
     

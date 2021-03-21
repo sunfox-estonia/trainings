@@ -23,6 +23,26 @@ php composer.phar install
 mkdir tmp
 chown -R www-data:www-data tmp/
 ```
+Для корректной работы статики в режиме мобилнього приложения необходимо также сконфигурировать nginx примерно следующим образом:
+
+```nginx
+location ~* \.(js|css|png|jpg|jpeg|gif)$ {
+        expires  30d;
+        set $mobile_rewrite no;
+
+        if ($http_user_agent ~* '(iPhone|iPod|iPad|Android|BlackBerry|webOS|Windows Phone)') {
+                set $mobile_rewrite yes;
+        }
+        if ($mobile_rewrite = yes){
+                rewrite /dep/mobile.css https://$server_name/resources/css/mobile.css redirect;
+                break;
+        }
+        if ($mobile_rewrite = no){
+                rewrite /dep/dragscript.sfxtrain.js https://$server_name/resources/js/dragscript.sfxtrain.js redirect;
+                break;
+        }
+}
+```
 
 ## База данных
 Подключение к БД MySQL настраивается в файле /config.php, пожалуйста укажите данные для подключения в соответсвии с рекомендациями.
@@ -59,9 +79,12 @@ CREATE TABLE `plans` (
   `id` smallint(6) NOT NULL AUTO_INCREMENT,
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `date_planned` date DEFAULT NULL,
+  `date_locked` date DEFAULT NULL,
   `content` varchar(512) DEFAULT NULL,
   `content_intro` varchar(512) DEFAULT NULL,
   `quicklink` varchar(10) DEFAULT NULL,
+  `locked` tinyint(1) NOT NULL DEFAULT '0',
+  `locked_title` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 ```

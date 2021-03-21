@@ -13,13 +13,16 @@ h2{font-size:22px;line-height:30px;}
 h3{font-size:18px;line-height:24px;}
 
 body {font-family:Lucida Sans Unicode,Lucida Grande,sans-serif;color:#161616;background-color:#F5EEAD; background-image: url(../img/bg.jpg); background-position: left top; background-repeat: repeat;}
-p{font-size:14px;}
-div.card, div.tip{font-family:Lucida Sans Unicode,Lucida Grande,sans-serif;color:#161616;line-height: 1.5;}
+p,.table{font-size:14px;}
+div.card, div.tip, .table{font-family:Lucida Sans Unicode,Lucida Grande,sans-serif;color:#161616;line-height: 1.5;}
 p.card-text, div.tip p, div.tip ul{font-size:13px;}
 p.card-text{-moz-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
 div.tip {margin-top:8px;}
 div.tip p {margin-bottom:8px;}
 div.tip ul {margin-bottom:0px;}
+
+.locked_legend{border-bottom: 2px solid #c8d9ea;}
+.locked_title{overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;}
 #StatusIcon{color:#6c757d;}
 
 .timer{display:none;clear:both;position:sticky;top:0;background:#16161a;color:#fff;border-radius:0px 0px 6px 6px; font-size:40px;z-index:1000;}
@@ -62,3 +65,10 @@ footer p{margin-top:10px;margin-bottom:0px;font-size:13px;}
 
 header {margin-top:15px; margin-bottom:10px;}
 .is_mobile{display:none!important;}
+
+@media (min-width: 576px) {.locked_title{max-width:350px;} }
+@media (min-width: 1200px) {.locked_title{max-width:150px;} }
+@media (min-width: 1450px) {.locked_title{max-width:200px;} }
+@media (min-width: 1700px) {.locked_title{max-width:300px;} }
+
+
