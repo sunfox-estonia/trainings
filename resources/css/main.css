@@ -66,9 +66,4 @@ footer p{margin-top:10px;margin-bottom:0px;font-size:13px;}
 header {margin-top:15px; margin-bottom:10px;}
 .is_mobile{display:none!important;}
 
-@media (min-width: 576px) {.locked_title{max-width:350px;} }
-@media (min-width: 1200px) {.locked_title{max-width:150px;} }
-@media (min-width: 1450px) {.locked_title{max-width:200px;} }
-@media (min-width: 1700px) {.locked_title{max-width:300px;} }
-
 

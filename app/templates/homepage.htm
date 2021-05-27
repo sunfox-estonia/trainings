@@ -8,21 +8,31 @@
 
     <div class="container-fluid">       
         <header><div class="row">
-        <div class="col-7 col-sm-5 col-xl-2"><h1>Тренировка<small>&nbsp;<i class="fas fa-tablet-alt text-black-50 is_mobile"></i><check if="{{ @has_plan=='TRUE' && @pln_conf_locked == 1 }}">&nbsp;<i class="fas fa-lock text-black-50 is_mobile"></i></check></small></h1></div>
-        <div class="col-5 col-sm-7 col-xl-3">  
-            <form class="form-inline float-right">
+        <div class="col col-xl-5"><div class="row">
+            
             <check if="{{ @pln_conf_locked == 1 }}"><true>
-                <div class="d-none d-md-block mr-2 locked_legend locked_title">&laquo;{{ @pln_conf_title }}&raquo;</div>
-            </true>
-            <false>
-                <div class="form-group d-none d-md-block"><i class="fas fa-calendar-alt"></i><input type="date" id="ConfigTrainDate" class="form-control mx-sm-2" onchange="Config2Base()" <check if="{{ @pln_conf_planned }}">value="{{ date(@pln_conf_planned) }}"</check>></div>
+                <div class="col-9 col-md-11"><h2 class="locked_title mt-1"><small>
+                    <i class="fas fa-tablet-alt text-black-50 is_mobile"></i><check if="{{ @has_plan=='TRUE' && @pln_conf_locked == 1 }}">
+                    &nbsp;<i class="fas fa-lock text-black-50"></i></check>&nbsp;</small>
+                    &laquo;{{ @pln_conf_title }}&raquo;</h2></div>
+                <div class="col-3 col-md-1"><div class="btn-group float-right">
+                    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#ModalGetQuicklink"><i class="fas fa-link"></i></button>
+                    <a href="#" class="btn btn-light is_mobile" onclick="TimerView(this)"><i class="fas fa-hourglass-half"></i></a>
+                </div></div>   
+            </true><false>
+				<div class="col-7 col-md-2 col-xl-4"><h1>Тренировка</h1></div>
+                <div class="col-5 col-md-10 col-xl-8">
+                    <form class="form-inline float-right"><div class="form-group d-none d-md-block"><i class="fas fa-calendar-alt"></i><input type="date" id="ConfigTrainDate" class="form-control mx-sm-2" onchange="Config2Base()" <check if="{{ @pln_conf_planned }}">value="{{ date(@pln_conf_planned) }}"</check>></div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#ModalGetQuicklink"><i class="fas fa-link"></i></button>
+                            <a href="#" class="btn btn-light is_mobile" onclick="TimerView(this)"><i class="fas fa-hourglass-half"></i></a>    
+                            <a href="#" class="btn btn-light <check if="{{ @has_plan=='FALSE' || @pln_conf_locked == 1 }}">disabled</check> d-none d-xl-block" <check if="{{ @pln_conf_locked == 0 }}">data-toggle="modal" data-target="#ModalPlanLocker"</check> ><i class="fas <check if="{{ @pln_conf_locked == 1 }}"><true>fa-lock</true><false>fa-lock-open</false></check>"></i></a>
+                        </div>
+                    </form>
+                </div>				
             </false></check>
-            <div class="btn-group"><button type="button" class="btn btn-light" data-toggle="modal" data-target="#ModalGetQuicklink"><i class="fas fa-link"></i></button>
-                <a href="#" class="btn btn-light is_mobile" onclick="TimerView(this)"><i class="fas fa-hourglass-half"></i></a>    
-                <a href="#" class="btn btn-light <check if="{{ @has_plan=='FALSE' || @pln_conf_locked == 1 }}">disabled</check> d-none d-xl-block" <check if="{{ @pln_conf_locked == 0 }}">data-toggle="modal" data-target="#ModalPlanLocker"</check> ><i class="fas <check if="{{ @pln_conf_locked == 1 }}"><true>fa-lock</true><false>fa-lock-open</false></check>"></i></a>
-            </div>
-            </form>
-        </div>
+
+        </div></div>                      
         <div class="col-7 d-none d-xl-block">
             <a class="btn btn-secondary btn-sm mt-1" href="#" role="button" data-toggle="modal" data-target="#ModalPlansList"><i class="fas fa-bars"></i>&nbsp;&nbsp;Сохранённые тренировки</a>
         </div>    
