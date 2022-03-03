@@ -24,10 +24,10 @@ div.tip ul {margin-bottom:0px;}
 
 div[class^="comment-"] {margin-top:5px;font-family:Lucida Sans Unicode,Lucida Grande,sans-serif;font-size:14px}
 .comment-btn {float:right;line-height:1.0}
-.comment-textarea {background-color:white; height:38px; border-radius:4px; border:0.1px solid rgb(199, 199, 199); display:none;}
+.comment-textarea {background-color:white; height:38px; border-radius:4px; border:0.1px solid rgb(199, 199, 199); margin-bottom:20px; display:none;}
 .comment-textarea textarea{color:#161616;font-size:13px;}
 .comment-block {background-color:white; border-radius:4px; border:0.1px solid rgb(199, 199, 199); border-left:#6954B0 solid 4px; padding:0 0.8rem 0 0.8rem;}
-.comment-block p{color: rgb(82, 82, 82); margin-top:7px;margin-bottom:7px;}
+.comment-block p{color: rgb(82, 82, 82); margin-top:7px;margin-bottom:7px;line-height:21px;}
 
 .locked_legend{border-bottom: 2px solid #c8d9ea;}
 .locked_title{overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis;}
