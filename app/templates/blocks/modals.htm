@@ -31,6 +31,32 @@
     </form>
     </div></div></div>
     
+    <div class="modal" tabindex="-1" role="dialog" id="ModalPlanLocker" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+    <div class="modal-header"><h5 class="modal-title">Сохранить план тренировки</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>   
+    <form name="FormPlanLocker" action="/plan/locker" method="POST">
+    <input type="hidden" name="plan_ql" value="{{ @modal_quicklink }}">
+    <div class="modal-body">
+    <p>Сохраненные планы тренировок не подлежат изменению. Список планов доступен всем пользователям инфосистемы.</p>
+    <div class="form-group">
+    <label for="plan_title" class="col-form-label">Название плана:</label>
+    <input type="text" class="form-control" id="plan_title" name="plan_title" autofocus="autofocus" required>
+    <small id="plan_titleHelp" class="form-text text-muted">Укажите название, характеризующее составленный Вами план, например &laquo;Тренировка для новичков&raquo; или &laquo;Одиночная тренировка&raquo;.</small>
+    </div>
+    </div>
+    <div class="modal-footer"><button type="submit" class="btn btn-primary">Сохранить</button></div>
+    </form>
+    </div></div></div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="ModalPlansList" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content">
+    <div class="modal-header locked_legend" ><h5 class="modal-title">Сохраненные тренировки</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+    <div class="modal-body">        
+        <ul class="list-unstyled">
+            <repeat group="{{ @list_plans }}" value="{{ @l }}"> 
+            <li><small class="text-muted font-italic">{{ @l.date_locked }}</small>&nbsp;&ndash;&nbsp;<a href="/plan/{{ @l.quicklink }}">{{ @l.locked_title }}</a></li>
+            </repeat></tbody>
+        </ul>
+    </div></div></div></div>
+
     <div class="modal" tabindex="-1" role="dialog" id="ModalAddExr" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content">
     <div class="modal-header"><h5 class="modal-title">Добавить упражнение</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
     <form name="FormAddExercise" action="#">

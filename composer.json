@@ -1,6 +1,4 @@
 {
-        "name": "F3Community/fatfree-composer-app",
-        "description": "base composer package using fat-free framework",
         "config": {
                 "vendor-dir": "lib"
         },

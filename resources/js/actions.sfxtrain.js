@@ -22,7 +22,7 @@ $(document).on("click", 'main button.close', function() {
 });
 
 $(document).on('shown.bs.modal', '.modal', function() {
-  $(this).find('[autofocus]').focus();
+    $(this).find('[autofocus]').focus();
 });
 
 $(document).on("submit", "form[name=FormAddCategory]", function(event) {
@@ -79,5 +79,41 @@ $(document).on("submit", "form[name=FormAddExercise]", function(event) {
  *    $(this).closest('.btn-group').find('button').text(selText + ' ');
  * });
 */
+
+/* Timer */
+const timerInstance = new easytimer.Timer();
+
+$(document).on("click","#MainTimer a", function(event) {
+    event.preventDefault();
+    let TimerState = timerInstance.isRunning();
+    let TimerValue = $(this).text().split(':');;
+    let TimerSeconds = (+TimerValue[0]) * 60 * 60 + (+TimerValue[1]) * 60 + (+TimerValue[2]); 
+
+    if(TimerState === false){
+        console.log('Timer run!');
+        $(this).removeClass('stop');
+        timerInstance.start({countdown: true, startValues: {seconds: TimerSeconds}});
+    }else{
+        console.log('Timer stop!');
+        timerInstance.stop();
+        $(this).addClass('stop');
+        $(this).text('00:00:30');
+    }
+});
+
+timerInstance.addEventListener('secondsUpdated', function (e) {
+    $('#MainTimer a').text(timerInstance.getTimeValues().toString());
+});
+timerInstance.addEventListener('started', function (e) {
+    $('#MainTimer a').text(timerInstance.getTimeValues().toString());
+});
+timerInstance.addEventListener('reset', function (e) {
+    $('#MainTimer a').text(timerInstance.getTimeValues().toString());
+});
+timerInstance.addEventListener('targetAchieved', function (e) {
+    $('#MainTimer a').addClass('stop');
+    $('#MainTimer a').html('00:00:30');
+    new Audio('/resources/mp3/t_stop.mp3').play();
+});
 
 

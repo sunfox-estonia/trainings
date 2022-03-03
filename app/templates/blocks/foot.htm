@@ -383,9 +383,12 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="/resources/js/bootstrap.bundle.min.js"></script>
+    <script src="/resources/js/easytimer.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs@1.3.4/dist/interact.min.js"></script>
     <script src="/resources/js/functions.sfxtrain.js"></script>
-    <script src="/dep/dragscript.sfxtrain.js"></script>
+    <check if="{{ @pln_conf_locked == 0 }}">
+        <script src="/dep/dragscript.sfxtrain.js"></script>
+    </check>
     <script src="/resources/js/actions.sfxtrain.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>

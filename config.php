@@ -15,7 +15,3 @@ $dbpost = '3306';
 $dbname = 'mysql_name';
 $dbuser = 'mysql_user';
 $dbpassword = 'mysql_pass';
-
-
-
-
